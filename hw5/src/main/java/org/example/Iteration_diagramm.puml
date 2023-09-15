@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Main -> FibonacciIteration: sum(number)
+FibonacciIteration --> Main: long result
+
+@enduml

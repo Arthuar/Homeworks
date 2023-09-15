@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Main -> FibonacciRecursion: fibonacciRecursion (number)
+FibonacciRecursion --> Main: (if number <= 1) long result
+
+FibonacciRecursion --> Main:long result
+
+@enduml

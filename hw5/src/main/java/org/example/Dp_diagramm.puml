@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Main -> FibonacciDp: fibonacci(number)
+FibonacciDp --> Main: (if number <= 1) long result
+
+FibonacciDp -> Main: (if memo containce number ) long result
+
+Main -> FibonacciDp:fibonacci(number)
+FibonacciDp ->FibonacciIteration:sum(number)
+FibonacciIteration ->FibonacciDp:memo.put(number)
+FibonacciDp -> Main: long result
+@enduml
