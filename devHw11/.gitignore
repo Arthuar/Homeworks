@@ -1,0 +1,8 @@
+.idea
+.iws
+.iml
+.ipr
+devHw11.iml
+time-servlet.iml
+target
+.DS_STORE /src/main/resources/log
