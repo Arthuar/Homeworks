@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<p  th:text="${'Title' + ': ' + note.getTitle()}">Value</p>
+<p th:text="${'Content' + ': ' + note.getContent()}">VALUE</p>
+
+<form >
+    <a class="btn btn-primary btn-sm" th:href="@{/note/list}">Return</a>
+
+</form>
+</body>
+</html>
