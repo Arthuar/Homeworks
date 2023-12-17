@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Note List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        /*body {*/
+        /*    padding: 20px;*/
+        /*}*/
+
+    </style>
+</head>
+
+<body>
+<h3 th:if="${notes.size() == 0}" class="text-center" >У вас немає жодної нотатки</h3>
+<div th:if="${notes.size() != 0}" class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header shadow">
+            <h2 class="text-center">Список нотаток</h2>
+        </div>
+        <table  class="table table-bordered mt-3">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="note : ${notes}">
+                <td th:text="${note.title}">Title</td>
+                <td th:text="${note.content}">Content</td>
+                <td>
+                    <a class="btn btn-primary" th:href="@{/note/edit/{id}(id=${note.id})}">Редагувати ✏️ </a>
+
+                    <form th:action="@{/note/delete}" method="post" class="d-inline">
+                        <input type="hidden" name="id" th:value="${note.id}"/>
+                        <button type="submit" class="btn btn-primary">Видалити 🗑️</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container mt-5">
+    <a class="btn btn-primary btn-lg shadow flex-fill" th:href="@{/note/create}">Створити нову нотатку</a>
+
+</div>
+<footer>@2023 <a href="https://github.com/Eugen2510/group13_homework15">Your Name</a> | <a href="https://www.linkedin.com/in/%D1%94%D0%B2%D0%B3%D0%B5%D0%BD-%D0%BB-09388714b/">LinkedIn</a></footer>
+<!--<a class="btn btn-primary btn-lg shadow flex-fill" th:href="@{/note/create}">Створити нову нотатку</a>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
